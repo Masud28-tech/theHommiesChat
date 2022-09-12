@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@300&family=Kanit:wght@200;300;400&family=Open+Sans:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input {
+  font-family: 'Kanit', sans-serif;
+}
+
+body{
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}

@@ -1,0 +1,34 @@
+{
+  "name": "backend-chat-app",
+  "version": "1.0.0",
+  "description": "real time chat application project using MERN and socket.io ",
+  "engines": {
+    "node": "16.13.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Masud28-tech/realtime-chat-app.git"
+  },
+  "author": "Masud Ansari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Masud28-tech/realtime-chat-app/issues"
+  },
+  "homepage": "https://github.com/Masud28-tech/realtime-chat-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "heroku": "^7.63.0",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7",
+    "socket.io": "^4.5.1"
+  }
+}
