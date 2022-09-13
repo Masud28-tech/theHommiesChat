@@ -16,6 +16,16 @@ app.use(express.json());
 app.use('/api/auth', userRoutes);
 app.use('/api/message', messagesRoutes);
 
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+});
+
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -30,8 +40,9 @@ if(process.env.NODE_ENV == 'production'){
     const path = require('path');
 
     app.get('/', (req, res) => {
-        app.use(express.static(path.resolve(__dirname, 'client', 'build')))
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+        // app.use(express.static(path.resolve(__dirname, 'client', 'build')))
+        // res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+        res.json("backend is working perfectly.")
     })
 }
 
