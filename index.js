@@ -16,15 +16,6 @@ app.use(express.json());
 app.use('/api/auth', userRoutes);
 app.use('/api/message', messagesRoutes);
 
-// Add Access Control Allow Origin headers
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://hommies-chat.netlify.app");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-});
 
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
@@ -55,7 +46,7 @@ const server = app.listen(port || 5000, () => {
 //  SOCKET.IO: work for establishing real-time chat rendering and sending/receiving
 const io = socket(server, {
     cors: {
-        origin: CLIENT_URI,
+        origin: "https://hommies-chat.netlify.app",
         credentials: true,
     },
 });
