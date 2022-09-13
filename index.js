@@ -25,6 +25,7 @@ mongoose.connect(MONGO_URI, {
     console.log(err.message);
 });
 
+
 if(process.env.NODE_ENV == 'production'){
     const path = require('path');
 
@@ -37,7 +38,7 @@ if(process.env.NODE_ENV == 'production'){
 
 let port = process.env.PORT;
 const server = app.listen(port || 5000, () => {
-    console.log(`Server is started on Port ${process.env.PORT || port}`);
+    console.log(`Server is started on Port ${process.env.PORT || 5000}`);
 });
 
 //  SOCKET.IO: work for establishing real-time chat rendering and sending/receiving
